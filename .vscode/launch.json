@@ -1,0 +1,58 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Vue App - Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/src",
+            "skipFiles": [
+                "<node_internals>/**",
+                "**/node_modules/**",
+                "chrome-error://**"
+            ]
+        },
+        {
+            "name": "Debug Vue App - Edge",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/src",
+            "skipFiles": [
+                "<node_internals>/**",
+                "**/node_modules/**",
+                "chrome-error://**"
+            ]
+        },
+        {
+            "name": "Run Current JS/TS File",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}",
+            "skipFiles": [
+                "<node_internals>/**",
+                "**/node_modules/**"
+            ]
+        },
+        {
+            "name": "Debug Current PowerShell File with Args",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "args": [
+                "${input:scriptArgs}"
+            ],
+            "cwd": "${workspaceFolder}"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "scriptArgs",
+            "type": "promptString",
+            "description": "Arguments to pass to the PowerShell script",
+            "default": ""
+        }
+    ]
+}
